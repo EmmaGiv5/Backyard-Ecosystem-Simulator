@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://buodkhj4jmlti"]
+
+[ext_resource type="Script" uid="uid://hesgalml2pld" path="res://main_menu.gd" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://dnes3iso6r5lm" path="res://Homescreen/roundyard (1) (2).png" id="2_glbon"]
+[ext_resource type="Texture2D" uid="uid://dycok2sjaq1eh" path="res://Homescreen/homescreen.png" id="3_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://doxgqr0eynsgu" path="res://Buttons/play_button.png" id="4_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://ddbub52c3d2gi" path="res://Homescreen/Backya_title (1).png" id="4_qe12f"]
+[ext_resource type="Texture2D" uid="uid://l3qjs08xsm1h" path="res://Homescreen/Ecos-title (1).png" id="5_8qtwp"]
+[ext_resource type="Texture2D" uid="uid://cjw43abwvcjx0" path="res://Buttons/credits.png" id="5_dy7ct"]
+[ext_resource type="Texture2D" uid="uid://bthqq8by1s0gy" path="res://Buttons/exit.png" id="6_0o4t1"]
+
+[node name="Main Menu" type="Node2D" unique_id=1016801590]
+script = ExtResource("1_06t4h")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1034238843]
+offset_right = 1153.0
+offset_bottom = 653.0
+
+[node name="yard" type="Sprite2D" parent="TextureRect" unique_id=186383144]
+position = Vector2(577.00006, 319)
+scale = Vector2(1.8015625, 1.8)
+texture = ExtResource("2_glbon")
+
+[node name="entrance" type="Sprite2D" parent="TextureRect/yard" unique_id=297541387]
+position = Vector2(0.277524, 3.3333447)
+scale = Vector2(1.0121423, 1.0246913)
+texture = ExtResource("3_nlkkf")
+
+[node name="Button_manager" type="Control" parent="." unique_id=618832880]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Play" type="Button" parent="Button_manager" unique_id=1227913517]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.937
+anchor_top = 4.4750004
+anchor_right = 2.937
+anchor_bottom = 4.4750004
+offset_left = 179.51999
+offset_top = 383.0
+offset_right = 283.51996
+offset_bottom = 426.0
+text = "PLAY
+"
+
+[node name="TextureButton" type="TextureButton" parent="Button_manager/Play" unique_id=723214725]
+layout_mode = 0
+offset_left = -23.0
+offset_top = -11.0
+offset_right = 356.08014
+offset_bottom = 200.40137
+scale = Vector2(0.41451573, 0.29816666)
+mouse_filter = 2
+texture_normal = ExtResource("4_nlkkf")
+
+[node name="Credit" type="Button" parent="Button_manager" unique_id=784486476]
+layout_mode = 0
+offset_left = 562.0
+offset_top = 559.0
+offset_right = 665.0
+offset_bottom = 602.0
+text = "CREDIT
+"
+
+[node name="TextureButton" type="TextureButton" parent="Button_manager/Credit" unique_id=763737027]
+layout_mode = 0
+offset_left = -52.0
+offset_top = -18.0
+offset_right = 548.0
+offset_bottom = 182.0
+scale = Vector2(0.3308256, 0.37851334)
+mouse_filter = 2
+texture_normal = ExtResource("5_dy7ct")
+
+[node name="Exit" type="Button" parent="Button_manager" unique_id=219504878]
+layout_mode = 0
+offset_left = 802.0
+offset_top = 557.0
+offset_right = 904.0
+offset_bottom = 600.0
+text = "EXIT
+"
+
+[node name="TextureButton" type="TextureButton" parent="Button_manager/Exit" unique_id=1883339715]
+layout_mode = 0
+offset_left = -39.0
+offset_top = -24.999985
+offset_right = 561.0
+offset_bottom = 175.00002
+scale = Vector2(0.4146336, 0.40899593)
+mouse_filter = 2
+texture_normal = ExtResource("6_0o4t1")
+
+[node name="title_backyard" type="TextureRect" parent="." unique_id=1080845826]
+offset_left = 392.0
+offset_top = 190.0
+offset_right = 892.0
+offset_bottom = 370.0
+mouse_filter = 2
+texture = ExtResource("4_qe12f")
+
+[node name="title_ecosystem" type="TextureRect" parent="." unique_id=1214387526]
+offset_left = 355.0
+offset_top = 264.0
+offset_right = 920.0
+offset_bottom = 478.0
+mouse_filter = 2
+texture = ExtResource("5_8qtwp")
+
+[connection signal="pressed" from="Button_manager/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Button_manager/Credit" to="." method="_on_credit_pressed"]
+[connection signal="pressed" from="Button_manager/Exit" to="." method="_on_exit_pressed"]
