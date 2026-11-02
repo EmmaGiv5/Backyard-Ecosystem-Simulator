@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dpig13xhja8s3"]
+
+[ext_resource type="Texture2D" uid="uid://cgn05d7o1re4j" path="res://Saved/progress.png" id="1_8jp8v"]
+[ext_resource type="Script" uid="uid://clb1gol2i784o" path="res://Scenes/button1.gd" id="2_2iqgr"]
+
+[node name="saved" type="Node2D" unique_id=718438960]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1399052372]
+offset_left = -16.0
+offset_top = -4.0
+offset_right = 1290.0
+offset_bottom = 740.0
+scale = Vector2(0.90413874, 0.8995741)
+texture = ExtResource("1_8jp8v")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1396664429]
+offset_left = 60.0
+offset_top = 239.0
+offset_right = 1098.0
+offset_bottom = 338.0
+script = ExtResource("2_2iqgr")
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]

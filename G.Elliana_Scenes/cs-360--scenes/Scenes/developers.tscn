@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bln7422qarrxc"]
+
+[ext_resource type="Texture2D" uid="uid://cu567nx2v1ibg" path="res://Credits/developers.png" id="1_ukqr6"]
+[ext_resource type="Script" uid="uid://v5ahcofq5vte" path="res://Scenes/developers.gd" id="2_icni1"]
+
+[node name="Developers" type="Node2D" unique_id=339205274]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=684807795]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.7983233, 1.8068103)
+texture = ExtResource("1_ukqr6")
+script = ExtResource("2_icni1")

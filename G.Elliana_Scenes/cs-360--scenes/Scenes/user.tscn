@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cv0yflphddhj7"]
+
+[ext_resource type="Texture2D" uid="uid://cuan3g3q7oxuu" path="res://Saved/picks (1).png" id="2_lw5pd"]
+[ext_resource type="Script" uid="uid://dhybfx4ohhc3k" path="res://Scenes/user.gd" id="2_tmjv6"]
+
+[node name="User" type="Node2D" unique_id=635130199]
+script = ExtResource("2_tmjv6")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1106201173]
+offset_right = 1152.0
+offset_bottom = 647.0
+texture = ExtResource("2_lw5pd")
+
+[node name="start_game1" type="TextureButton" parent="TextureRect" unique_id=590564062]
+layout_mode = 0
+offset_left = 638.0
+offset_top = 540.0
+offset_right = 820.0
+offset_bottom = 602.0
+
+[node name="back_game1" type="TextureButton" parent="TextureRect" unique_id=246712904]
+layout_mode = 0
+offset_left = 906.0
+offset_top = 541.0
+offset_right = 1089.0
+offset_bottom = 604.0
+mouse_filter = 2
+
+[connection signal="pressed" from="TextureRect/start_game1" to="TextureRect" method="_on_start_game_1_pressed"]
