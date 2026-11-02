@@ -1,5 +1,18 @@
+# Existing project exclusions
 Backyard-Ecosystem-Simulator/
-Design/ 
-SproutePack/
-GnattChart 
-Sprout Lands = Sprites = Basic pack.zip 
+Design/
+SproutPack/
+GnattChart
+Sprout Lands - Sprites - Basic pack.zip
+
+# Python backend secrets and temporary files
+.env
+**/.env
+__pycache__/
+**/__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Godot temporary files
+.godot/
