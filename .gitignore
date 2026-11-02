@@ -1,4 +1,8 @@
-GnattChart
-Sprout Lands - Sprites - Basic pack.zip 
-SproutPack/
-Design/
+.env
+**/.env
+__pycache__/
+**/__pycache__/
+*.pyc
+.venv/
+venv/
+.godot/
