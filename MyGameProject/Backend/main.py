@@ -1,6 +1,7 @@
 
 import json
 from fastapi import FastAPI, HTTPException, Depends
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from pydantic import BaseModel
 from jwt.exceptions import InvalidTokenError
@@ -9,13 +10,22 @@ from database import get_connection
 from auth import hash_password, verify_password, create_token, verify_token
 
 app = FastAPI(title="MyGame Backend")
-
+# Allow Godot desktop/web development clients
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:8080",
+        "http://127.0.0.1:8080",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 security = HTTPBearer()
 
 
 class RegisterRequest(BaseModel):
     username: str
-    email: str
     password: str
 
 
@@ -60,9 +70,9 @@ def register(data: RegisterRequest):
 
     try:
         cursor.execute(
-            "INSERT INTO users (username, email, password_hash) VALUES (%s, %s, %s)",
-            (data.username, data.email, hash_password(data.password))
-        )
+    "INSERT INTO users (username, password_hash) VALUES (%s, %s)",
+    (data.username, hash_password(data.password))
+)
         connection.commit()
         return {"message": "Account created successfully"}
 
